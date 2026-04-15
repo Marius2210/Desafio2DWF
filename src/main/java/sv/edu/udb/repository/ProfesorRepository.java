@@ -1,0 +1,8 @@
+package sv.edu.udb.repository;
+import sv.edu.udb.Desafio1DWF.domain.Profesor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProfesorRepository extends JpaRepository<Profesor, Long> {
+}
