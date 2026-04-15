@@ -1,4 +1,5 @@
 package sv.edu.udb.repository.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -15,10 +16,12 @@ public class Materia {
     //Muchas materias pertenecen a un solo profesor
     @ManyToOne
     @JoinColumn(name = "id_profesor")
+    @JsonIgnoreProperties("materias") // Evita que el profesor intente cargar de nuevo sus materias
     private Profesor profesor;
 
     //Una materia puede tener muchos alumnos y un alumno puede estar en muchas materias
     @ManyToMany(mappedBy = "materias")
+    @JsonIgnoreProperties("materias") // Evita que el alumno intente cargar de nuevo sus materias
     private List<Alumno> alumnos;
 
     // Constructores

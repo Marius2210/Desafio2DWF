@@ -1,4 +1,5 @@
 package sv.edu.udb.repository.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class Alumno {
             joinColumns = @JoinColumn(name = "id_alumno"),
             inverseJoinColumns = @JoinColumn(name = "id_materia")
     )
+    @JsonIgnoreProperties("alumnos") // Evita que la materia intente cargar de nuevo a los alumnos
     private List<Materia> materias;
 
     // Constructores
