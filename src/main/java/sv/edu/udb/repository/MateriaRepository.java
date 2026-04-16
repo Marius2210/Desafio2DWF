@@ -1,5 +1,5 @@
 package sv.edu.udb.repository;
-import sv.edu.udb.Desafio1DWF.domain.Materia;
+import sv.edu.udb.repository.domain.Materia;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
