@@ -5,6 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "materia")
+@JsonIgnoreProperties
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

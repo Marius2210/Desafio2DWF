@@ -1,4 +1,5 @@
 package sv.edu.udb.repository.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Profesor {
 
     //Un profesor puede tener muchas materias
     @OneToMany(mappedBy = "profesor")
+    @JsonIgnoreProperties("profesor")
     private List<Materia> materias;
 
     // Constructores
