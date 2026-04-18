@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "materia")
-@JsonIgnoreProperties
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,10 @@ public class Materia {
 
     // Constructores
     public Materia() {}
+
+    public Materia(Long id) {
+        this.id = id;
+    }
 
     public Materia(String nombre, Profesor profesor) {
         this.nombre = nombre;
